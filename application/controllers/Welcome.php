@@ -20,9 +20,6 @@ class Welcome extends Application {
     //-------------------------------------------------------------
 
     function index() {
-        // Load Orders model
-        $this->load->model('orders');
-
         $this->data['title'] = 'Jim\'s Joint!';
         $this->data['pagebody'] = 'welcome';
 
