@@ -22,7 +22,7 @@ class Orders extends MY_Model {
             $CI->orderitems->update($record);
         } else {
             $record = $CI->orderitems->create();
-            $record->num = $num;
+            $record->order = $num;
             $record->item = $code;
             $record->quantity = 1;
             $CI->orderitems->add($record);
@@ -36,7 +36,7 @@ class Orders extends MY_Model {
         $CI->load->model('orderitems');
 
         // All items in the current order
-        $items = $this->orderitems->some('code', $num);
+        $items = $this->orderitems->some('order', $num);
 
         // Add prices
         $sum = 0;
